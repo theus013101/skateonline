@@ -21,3 +21,5 @@ Sistema desktop para cadastro e consulta de produtos de skate, integrado ao banc
 - Consulta e listagem de produtos
 - Interface gráfica em Swing
 - Integração com banco de dados MySQL
+- Sistema de login de usuários
+- Banco de dados de usuários para autenticação
