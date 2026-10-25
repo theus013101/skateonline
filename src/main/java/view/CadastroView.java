@@ -5,10 +5,16 @@
 package view;
 
 import com.mycompany.skateonline1.Produto;
+<<<<<<< HEAD
 import com.mycompany.skateonline1.ProdutoService;
 import javax.swing.JOptionPane;
 import view.PedidoView;
 import view.PedidoView;
+=======
+import com.mycompany.skateonline1.dao.ProdutosDAO;
+import javax.swing.JOptionPane;
+
+>>>>>>> 657037e22440b7557a8d2236d57739daf4a7f5a6
 
 /**
  *
@@ -150,11 +156,16 @@ public class CadastroView extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
     try {
+<<<<<<< HEAD
 
+=======
+        // Pega os dados da tela
+>>>>>>> 657037e22440b7557a8d2236d57739daf4a7f5a6
         String nome = txtNome.getText();
         double valor = Double.parseDouble(txtValor.getText());
         int quantidade = Integer.parseInt(txtQuantidade.getText());
 
+<<<<<<< HEAD
         Produto novoProduto = new Produto(
                 nome,
                 valor,
@@ -209,6 +220,33 @@ public class CadastroView extends javax.swing.JFrame {
                 "Erro inesperado."
         );
 
+=======
+        // Cria o objeto Produto com os dados da tela
+        Produto novoProduto = new Produto(nome, valor, quantidade);
+
+        // Usa o DAO para salvar no banco
+        ProdutosDAO dao = new ProdutosDAO();
+        boolean sucesso = dao.inserir(novoProduto);
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this,
+                "Produto cadastrado com sucesso!\n" +
+                "Nome: " + novoProduto.getNome() +
+                "\nValor: R$ " + novoProduto.getValor() +
+                "\nQuantidade: " + novoProduto.getQuantidade());
+
+            // Fecha a tela atual e volta para pedidos
+            dispose();
+            new PedidoView().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar produto. Verifique os dados.");
+        }
+
+    } catch (NumberFormatException nfe) {
+        JOptionPane.showMessageDialog(this, "Valor ou quantidade inválidos. Digite números válidos.");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro inesperado ao cadastrar produto.");
+>>>>>>> 657037e22440b7557a8d2236d57739daf4a7f5a6
         e.printStackTrace();
     }
     }//GEN-LAST:event_btnSalvarActionPerformed
