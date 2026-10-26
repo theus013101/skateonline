@@ -13,7 +13,10 @@ view\LoginView$1.class
 view\LoginView$4.class
 view\CadastroView$3.class
 com\mycompany\skateonline1\dao\UsuarioDAO.class
+com\mycompany\skateonline1\ProdutoService.class
+com\mycompany\skateonline1\TesteFase6.class
 view\CadastroView$2.class
+com\mycompany\skateonline1\UsuarioService.class
 view\PedidoView$3.class
 view\PedidoView$1.class
 view\CadastroUsuarioView$2.class

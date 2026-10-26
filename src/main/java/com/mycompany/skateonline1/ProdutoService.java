@@ -35,4 +35,21 @@ public class ProdutoService {
 
         return dao.inserir(produto);
     }
+public boolean validarProduto(Produto produto) {
+
+    if (produto.getNome() == null ||
+        produto.getNome().trim().isEmpty()) {
+        return false;
+    }
+
+    if (produto.getValor() <= 0) {
+        return false;
+    }
+
+    if (produto.getQuantidade() < 0) {
+        return false;
+    }
+
+    return true;
+    }
 }
